@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using server_.Users.Model;
+using server_.User.Model;
+using server_.Order.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace server_
 {
     public class MauiContext : DbContext
     {
-        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<UserModel> Users { get; set; } = null!;
+        public DbSet<OrderModel> Orders { get; set; } = null!;
         //public DbSet<DriverUser> Drivers { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

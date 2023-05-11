@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Net.Sockets;
 using System.Reflection.Metadata;
 using System.Text;
-using server_.Users.Model;
+using server_.User.Model;
 using System.IO;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -21,7 +21,7 @@ namespace server_
         public const bool isdbneeded = false;
         public const bool isDatabaseNeedToDeletedBefore = true;
         public static MauiContext mauiContext = new MauiContext();
-        public static List<User> Users { get; set; }
+        public static List<UserModel> Users { get; set; }
         public static IHttpClientFactory httpClientFactory = new DefaultHttpClientFactory();
 
         static async Task Main()
@@ -67,9 +67,9 @@ namespace server_
                             {
                                 if (EntriesValidation(entries[1], entries[2]) || Users.Count == 0)
                                 {
-                                    mauiContext.Users.Add(new User(entries[0], entries[1], entries[2], entries[3]));
+                                    mauiContext.Users.Add(new UserModel(entries[0], entries[1], entries[2], entries[3]));
                                     mauiContext.SaveChanges();
-                                    Users.Add(new User(entries[0], entries[1], entries[2], entries[3]));
+                                    Users.Add(new UserModel(entries[0], entries[1], entries[2], entries[3]));
                                     string response = "1";
                                     Console.WriteLine($"Запрос:{destination}, Поле: {entry}, Ответ:{response}");
                                     //TODO:создаём папку пользователя
