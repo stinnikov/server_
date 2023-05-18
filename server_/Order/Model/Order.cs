@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace server_.Order
+namespace server_.Order.Model
 {
     public enum OrderStatus
     {
@@ -15,7 +15,7 @@ namespace server_.Order
         Completed,
         Cancelled
     }
-    public class Order
+    public class OrderModel
     {
         public int Id { get; set; }
         public DateTime StartingTime { get; set; } //дата начала заказа
@@ -27,12 +27,12 @@ namespace server_.Order
         public OrderStatus Status { get; set; } //статус заказа
         public int Driver_Id { get; set; } //id виодителя который выполнил/яет заказ
                                                 //public string Tariff; //тариф
-        public Order(string startingPoint, string endingPoint)
+        public OrderModel(string startingPoint, string endingPoint)
         {
             this.StartingPoint = startingPoint;
             this.EndingPoint = endingPoint;
         }
-        public Order(DateTime start_Time, string start, string end, float price)
+        public OrderModel(DateTime start_Time, string start, string end, float price)
         {
             StartingTime = start_Time;
             StartingPoint = start;

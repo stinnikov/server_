@@ -1,0 +1,13 @@
+{
+  "Id": 0,
+  "FirstName": "a",
+  "LastName": "b",
+  "Patronymic": null,
+  "PhoneNumber": "c",
+  "Email": "d",
+  "Password": "e",
+  "DateOfBirth": "0001-01-01T00:00:00",
+  "Age": 2022,
+  "UserType": 0,
+  "Created": "0001-01-01T00:00:00"
+}

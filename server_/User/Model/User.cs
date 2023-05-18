@@ -41,6 +41,7 @@ namespace server_.User.Model
         public UserType UserType { get; set; }
         [Column(TypeName = "date")]
         public DateTime Created { get; set; }
+        public string Token { get; set; }
         public UserModel(string firstName, string lastName, string phoneNumber, string email, string password, UserType userType)
         {
             FirstName = firstName;
