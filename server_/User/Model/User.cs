@@ -14,6 +14,7 @@ namespace server_.User.Model
         Driver,
         Dispatcher,
         Administrator,
+        Unknown,
     }
     public class UserModel
     {
@@ -24,6 +25,9 @@ namespace server_.User.Model
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public double? Longitude { get; set; }
+        public double? Latitude { get; set; }
+
         [Column(TypeName = "date")]
         public DateTime DateOfBirth { get; set; }
         public int Age
@@ -41,7 +45,6 @@ namespace server_.User.Model
         public UserType UserType { get; set; }
         [Column(TypeName = "date")]
         public DateTime Created { get; set; }
-        public string Token { get; set; }
         public UserModel(string firstName, string lastName, string phoneNumber, string email, string password, UserType userType)
         {
             FirstName = firstName;
